@@ -13,7 +13,7 @@ def browser(request):
     language = request.config.getoption("language")
     browser = webdriver.Chrome()
     browser.implicitly_wait(12)
-    link = f"http://selenium1py.pythonanywhere.com/{language}/catalogue/coders-at-work_207/"
+    link = f"http://selenium1py.pythonanywhere.com/{language}/"
     browser.get(link)
     yield browser
     time.sleep(5)
