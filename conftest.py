@@ -16,5 +16,5 @@ def browser(request):
     link = f"http://selenium1py.pythonanywhere.com/{language}/"
     browser.get(link)
     yield browser
-    time.sleep(5)
+    time.sleep(10)
     browser.quit()
