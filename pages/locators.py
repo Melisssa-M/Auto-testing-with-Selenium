@@ -12,3 +12,7 @@ class LoginPageLocators:
 
 class ProductPageLocators:
     ADD_TO_BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    PRICE_POP_UP = (By.CSS_SELECTOR, "div.fade.in > div > p:nth-child(1) > strong")
+    PRICE_OF_ITEM = (By.CSS_SELECTOR, "p.price_color")
+    NAME_OF_ITEM = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div > strong")
+    NAME_POP_UP = (By.CSS_SELECTOR, ".product_main h1")

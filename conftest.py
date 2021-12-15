@@ -12,6 +12,7 @@ def pytest_addoption(parser):
 def browser(request):
     language = request.config.getoption("language")
     browser = webdriver.Chrome()
+    browser.language = language
     browser.implicitly_wait(12)
     link = f"http://selenium1py.pythonanywhere.com/{language}/"
     browser.get(link)
