@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-
+from conftest import browser
 
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
@@ -16,3 +16,8 @@ class ProductPageLocators:
     PRICE_OF_ITEM = (By.CSS_SELECTOR, "p.price_color")
     NAME_OF_ITEM = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div > strong")
     NAME_POP_UP = (By.CSS_SELECTOR, ".product_main h1")
+
+
+class Links:
+    LOGIN_LINK = 'accounts/login/'
+    PRODUCT_FOR_TEST_LINK = 'catalogue/coders-at-work_207/'

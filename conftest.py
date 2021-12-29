@@ -3,6 +3,7 @@ from selenium import webdriver
 import time
 
 
+
 def pytest_addoption(parser):
     parser.addoption('--language', action='store', default="en-gb",
                      help="Choose language")
@@ -14,8 +15,8 @@ def browser(request):
     browser = webdriver.Chrome()
     browser.language = language
     browser.implicitly_wait(12)
-    link = f"http://selenium1py.pythonanywhere.com/{language}/"
-    browser.get(link)
+    browser.link = f"http://selenium1py.pythonanywhere.com/{language}/"
+    browser.get(browser.link)
     yield browser
-    time.sleep(10)
+    time.sleep(1)
     browser.quit()
