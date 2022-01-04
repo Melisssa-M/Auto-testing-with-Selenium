@@ -39,6 +39,7 @@ def test_guest_cant_see_success_message(browser):
         "Success message is presented, but should not be"
 
 
+@pytest.mark.skip
 @pytest.mark.xfail
 def test_message_disappeared_after_adding_product_to_basket(browser):
     link = browser.link + Links.PRODUCT_FOR_TEST_LINK
@@ -47,3 +48,17 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     browser.find_element(*ProductPageLocators.ADD_TO_BASKET).click()
     assert product_page.is_disappeared(*ProductPageLocators.NAME_OF_ITEM), \
         "Success message is presented, but should disappear"
+
+
+def test_guest_should_see_login_link_on_product_page(browser):
+    link = browser.link + Links.PRODUCT_FOR_TEST_2_LINK
+    page = ProductPage(browser, link)
+    page.open()
+    page.should_be_login_link()
+
+
+def test_guest_can_go_to_login_page_from_product_page(browser):
+    link = browser.link + Links.PRODUCT_FOR_TEST_2_LINK
+    page = ProductPage(browser, link)
+    page.open()
+    page.go_to_login_page()

@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from conftest import browser
+
 
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
@@ -21,3 +21,9 @@ class ProductPageLocators:
 class Links:
     LOGIN_LINK = 'accounts/login/'
     PRODUCT_FOR_TEST_LINK = 'catalogue/coders-at-work_207/'
+    PRODUCT_FOR_TEST_2_LINK = 'catalogue/the-city-and-the-stars_95/'
+
+
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
